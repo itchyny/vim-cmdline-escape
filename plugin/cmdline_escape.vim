@@ -2,7 +2,7 @@
 " Filename: plugin/cmdline_escape.vim
 " Author: itchyny
 " License: MIT License
-" Last Change: 2015/01/01 00:00:00.
+" Last Change: 2015/02/26 02:41:56.
 " =============================================================================
 
 if exists('g:loaded_cmdline_escape') || v:version < 700
@@ -12,7 +12,7 @@ endif
 let s:save_cpo = &cpo
 set cpo&vim
 
-cnoremap <expr> <Plug>(cmdline-escape-/) cmdline_escape#escape('/', '/')
+cnoremap <expr> <Plug>(cmdline-escape-/) cmdline_escape#slash()
 cnoremap <expr> <Plug>(cmdline-escape-?) cmdline_escape#escape('?', '/')
 cnoremap <expr> <Plug>(cmdline-escape-~) cmdline_escape#escape('~', '/')
 cnoremap <expr> <Plug>(cmdline-escape-bs) cmdline_escape#backspace('')
