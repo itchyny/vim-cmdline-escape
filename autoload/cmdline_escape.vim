@@ -2,7 +2,7 @@
 " Filename: autoload/cmdline_escape.vim
 " Author: itchyny
 " License: MIT License
-" Last Change: 2015/02/26 03:08:27.
+" Last Change: 2022/01/12 14:04:26.
 " =============================================================================
 
 let s:save_cpo = &cpo
@@ -35,7 +35,7 @@ endfunction
 
 function! cmdline_escape#slash() abort
   if getcmdtype() ==# ':' && getcmdline() =~? '^%\?s\%[ubstitute]\s*$'
-    return "\<C-w>" . tolower(matchstr(getcmdline(), '\a\+\s*$')) . '/'
+    return "\<C-u>" . tolower(getcmdline()) . '/'
   elseif getcmdtype() ==# '/'
     return cmdline_escape#escape('/', '/')
   endif
